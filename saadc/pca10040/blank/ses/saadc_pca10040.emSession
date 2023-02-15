@@ -16,6 +16,8 @@
   <ProjectSessionItem path="saadc_pca10040;saadc_pca10040;Application"/>
   <ProjectSessionItem path="saadc_pca10040;saadc_pca10040;nRF_Drivers"/>
   <ProjectSessionItem path="saadc_pca10040;saadc_pca10040;nRF_Libraries"/>
+  <ProjectSessionItem path="saadc_pca10040;saadc_pca10040;nRF_Segger_RTT"/>
+  <ProjectSessionItem path="saadc_pca10040;saadc_pca10040;Segger Startup Files"/>
  </Project>
  <Register1/>
  <Register2/>
@@ -40,8 +42,11 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="28" y="76" useTextEdit="1" path="../../../main.c" left="0" selected="1" top="39" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="116" useTextEdit="1" path="../../../main.c" left="0" selected="1" top="55" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../config/sdk_config.h" left="0" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="11" y="185" useTextEdit="1" path="../../../../../../external/segger_rtt/SEGGER_RTT_Syscalls_SES.c" left="0" top="185" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="8" y="49" useTextEdit="1" openedFrom="C:/Users/admin/Desktop/research/DeviceDownload/nRF5_SDK_17.1.0_ddde560/nRF5_SDK_17.1.0_ddde560/examples/MyProjects/saadc/main.c" path="../../../../../../components/boards/pca10040.h" left="0" top="36" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="12" y="26" useTextEdit="1" path="../../../../../../../../../../../AppData/Local/SEGGER/SEGGER Embedded Studio/v3/tools.xml" left="0" top="11" codecName="Default"/>
  </Files>
- <EMStudioWindow activeProject="saadc_pca10040" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <EMStudioWindow activeProject="saadc_pca10040" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

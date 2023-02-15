@@ -56,6 +56,7 @@
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
 
+nrf_saadc_value_t adc_val;
 
 void saadc_callback_handler(nrf_drv_saadc_evt_t const * p_event) // blocking-mode
 {
@@ -66,7 +67,7 @@ void saadc_init(void)
 {
   ret_code_t err_code; // uint32_t
 
-  nrf_saadc_channel_config_t channel_config = NRFX_SAAD_DEFAULT_CHANNEL_CONFIG_SE(NRF_SAADC_INPUT_AIN2); // AIN2 Pin Reading, resolution = default(10bits)
+  nrf_saadc_channel_config_t channel_config = NRFX_SAADC_DEFAULT_CHANNEL_CONFIG_SE(NRF_SAADC_INPUT_AIN2); // AIN2 Pin Reading, resolution = default(10bits)
 
   // Initialize the saadc
   err_code = nrf_drv_saadc_init(NULL, saadc_callback_handler);
@@ -85,27 +86,42 @@ APP_ERROR_CHECK(NRF_LOG_INIT(NULL));
 
 NRF_LOG_DEFAULT_BACKENDS_INIT();
 }
+
+void led_advertising(void)
+{
+  bsp_board_led_on(BSP_BOARD_LED_1);
+  nrf_delay_ms(500);
+  bsp_board_led_off(BSP_BOARD_LED_1);
+}
 /**
  * @brief Function for main application entry.
  */
 int main(void)
 {
+  /* Configure board. */
+  bsp_board_init(BSP_INIT_LEDS);
+
   log_init();
 
   saadc_init();
 
-  nrf_saadc_value_t adc_val;
+//  nrf_saadc_value_t adc_val;
 
   NRF_LOG_INFO("Application Started!");
+    
     while (1)
     {
-      nrfx_saadc_sample_convert(0,&adc_val) // Channel = 0
+
+      nrfx_saadc_sample_convert(0,&adc_val); // Channel = 0
       
       NRF_LOG_INFO("Sample value Read: %d", adc_val);
+
+      led_advertising();
 
       NRF_LOG_INFO("Volts: " NRF_LOG_FLOAT_MARKER "\r\n", NRF_LOG_FLOAT(adc_val * 3.6 / 1024)); // 1024 = 10 bits resolution
       
       nrf_delay_ms(500);
+
     }
 }
 
