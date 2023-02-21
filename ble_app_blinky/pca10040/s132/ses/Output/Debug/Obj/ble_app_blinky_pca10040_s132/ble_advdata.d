@@ -1,6 +1,6 @@
 Output/Debug/Obj/ble_app_blinky_pca10040_s132/ble_advdata.o: \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5_SDK_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\ble\common\ble_advdata.c \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5_SDK_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\ble\common\ble_advdata.h \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5_sdk_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\ble\common\ble_advdata.c \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5_sdk_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\ble\common\ble_advdata.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/stdint.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/__SEGGER_RTL.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/__SEGGER_RTL_ConfDefaults.h \
@@ -46,7 +46,7 @@ Output/Debug/Obj/ble_app_blinky_pca10040_s132/ble_advdata.o: \
  ../../../../../../components/libraries/util/sdk_macros.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
  ../../../../../../components/softdevice/s132/headers/ble_gap.h \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5_SDK_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\ble\common\ble_srv_common.h \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5_sdk_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\ble\common\ble_srv_common.h \
  ../../../../../../components/softdevice/s132/headers/ble_types.h \
  ../../../../../../components/libraries/util/app_util.h \
  ../../../../../../components/softdevice/s132/headers/ble_gatt.h

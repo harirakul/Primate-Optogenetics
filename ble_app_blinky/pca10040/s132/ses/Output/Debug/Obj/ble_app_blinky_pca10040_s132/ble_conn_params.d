@@ -1,5 +1,5 @@
 Output/Debug/Obj/ble_app_blinky_pca10040_s132/ble_conn_params.o: \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5_SDK_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\ble\common\ble_conn_params.c \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5_sdk_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\ble\common\ble_conn_params.c \
  ../../../../../../components/libraries/util/sdk_common.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/stdint.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/__SEGGER_RTL.h \
@@ -37,7 +37,7 @@ Output/Debug/Obj/ble_app_blinky_pca10040_s132/ble_conn_params.o: \
  ../../../../../../components/softdevice/s132/headers/ble_hci.h \
  ../../../../../../components/softdevice/s132/headers/ble_err.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5_SDK_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\ble\common\ble_conn_params.h \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5_sdk_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\ble\common\ble_conn_params.h \
  ../../../../../../components/softdevice/s132/headers/ble.h \
  ../../../../../../components/softdevice/s132/headers/nrf_svc.h \
  ../../../../../../components/softdevice/s132/headers/ble_err.h \
@@ -49,12 +49,12 @@ Output/Debug/Obj/ble_app_blinky_pca10040_s132/ble_conn_params.o: \
  ../../../../../../components/softdevice/s132/headers/ble_gatt.h \
  ../../../../../../components/softdevice/s132/headers/ble_gattc.h \
  ../../../../../../components/softdevice/s132/headers/ble_gatts.h \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5_SDK_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\ble\common\ble_srv_common.h \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5_sdk_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\ble\common\ble_srv_common.h \
  ../../../../../../components/softdevice/s132/headers/ble_types.h \
  ../../../../../../components/libraries/util/app_util.h \
  ../../../../../../components/softdevice/s132/headers/ble_gap.h \
  ../../../../../../components/softdevice/s132/headers/ble_gatt.h \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5_SDK_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\ble\common\ble_conn_state.h \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5_sdk_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\ble\common\ble_conn_state.h \
  ../../../../../../components/libraries/atomic/nrf_atomic.h \
  ../../../../../../components/softdevice/common/nrf_sdh_ble.h \
  ../../../../../../components/libraries/experimental_section_vars/nrf_section_iter.h \
