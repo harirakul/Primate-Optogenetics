@@ -45,6 +45,7 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <string.h>
 #include "nordic_common.h"
 #include "nrf.h"
@@ -137,7 +138,7 @@ void saadc_callback_handler(nrf_drv_saadc_evt_t const * p_event) // blocking-mod
   // Empty handler function
 }
 
-/*
+
 void saadc_init(void)
 {
   ret_code_t err_code; // uint32_t
@@ -154,7 +155,7 @@ void saadc_init(void)
   
 
   }
-  */
+  
 
 
 
@@ -634,17 +635,17 @@ int main(void)
     for (;;)
     {
         idle_state_handle();
-/* saadc basic example
+// saadc basic example
       nrfx_saadc_sample_convert(0,&adc_val); // Channel = 0
       
       NRF_LOG_INFO("Sample value Read: %d", adc_val);
 
-      led_advertising();
+//      led_advertising();
 
       NRF_LOG_INFO("Volts: " NRF_LOG_FLOAT_MARKER "\r\n", NRF_LOG_FLOAT(adc_val * 3.6 / 1024)); // 1024 = 10 bits resolution
       
       nrf_delay_ms(500);
-*/
+
     }
 }
 
