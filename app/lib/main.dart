@@ -3,7 +3,10 @@ import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
 
 final flutterReactiveBle = FlutterReactiveBle();
 var MACAddress = "D0:94:42:C9:97:E5";
-
+var characteristic = QualifiedCharacteristic(
+    serviceId: Uuid.parse("00001523-1212-efde-1523-785feabcd123"),
+    characteristicId: Uuid.parse("00001525-1212-efde-1523-785feabcd123"),
+    deviceId: MACAddress);
 void main() {
   runApp(const MyApp());
 }
@@ -63,14 +66,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 onChanged: (bool value) {
                   setState(() {
                     lightStatus = value;
+                    int writeData;
+                    if (value) {
+                      writeData = 0x4f4e;
+                    } else {
+                      writeData = 0x4f4646;
+                    }
                     print(value);
-                    final characteristic = QualifiedCharacteristic(
-                        serviceId: Uuid([1800]),
-                        characteristicId: Uuid([1800]),
-                        deviceId: MACAddress);
-                    flutterReactiveBle.writeCharacteristicWithResponse(
+                    print(writeData.toString());
+                    //print(String)
+
+                    flutterReactiveBle.writeCharacteristicWithoutResponse(
                         characteristic,
-                        value: [0x00]);
+                        value: [writeData]);
                   });
                 },
               ),
@@ -88,6 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
           )
               .listen((connectionState) {
             // Handle connection state updates
+            print(connectionState.connectionState);
           }, onError: (Object error) {
             // Handle a possible error
           });
