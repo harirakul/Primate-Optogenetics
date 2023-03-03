@@ -53,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
     //   print("-------------");
     //   print("");
     // }
+    // Using 26
 
     await flutterReactiveBle.writeCharacteristicWithoutResponse(characteristic,
         value: [lightStatus ? 1 : 0]);

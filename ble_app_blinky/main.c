@@ -73,6 +73,9 @@
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
+//#include "zephyr.h"
+//#include <device.h>
+#include "nrf_gpio.h"
 
 
 #define ADVERTISING_LED                 BSP_BOARD_LED_0                         /**< Is on when device is advertising. */
@@ -115,6 +118,8 @@ static uint16_t m_conn_handle = BLE_CONN_HANDLE_INVALID;                        
 static uint8_t m_adv_handle = BLE_GAP_ADV_SET_HANDLE_NOT_SET;                   /**< Advertising handle used to identify an advertising set. */
 static uint8_t m_enc_advdata[BLE_GAP_ADV_SET_DATA_SIZE_MAX];                    /**< Buffer for storing an encoded advertising set. */
 static uint8_t m_enc_scan_response_data[BLE_GAP_ADV_SET_DATA_SIZE_MAX];         /**< Buffer for storing an encoded scan data. */
+
+    struct device *dev;
 
 /**@brief Struct that contains pointers to the encoded advertising data. */
 static ble_gap_adv_data_t m_adv_data =
@@ -302,9 +307,13 @@ static void nrf_qwr_error_handler(uint32_t nrf_error)
 {
     while(flag == 1)
     {
-        bsp_board_led_on(ADVERTISING_LED);
+        //bsp_board_led_on(ADVERTISING_LED);
+        //gpio_pin_write(dev, 19, 1);
+        nrf_gpio_pin_set(17);
         nrf_delay_ms(300);
-        bsp_board_led_off(ADVERTISING_LED);
+        //bsp_board_led_off(ADVERTISING_LED);
+        //gpio_pin_write(dev, 19, 0);
+        nrf_gpio_pin_clear(17);
         nrf_delay_ms(300);
     }
 }
@@ -313,12 +322,14 @@ static void led_write_handler(uint16_t conn_handle, ble_lbs_t * p_lbs, uint8_t l
 {
     if (led_state)
     {
-        bsp_board_led_on(LEDBUTTON_LED);
+        //bsp_board_led_on(LEDBUTTON_LED);
+        nrf_gpio_pin_clear(19);
         NRF_LOG_INFO("Received LED ON!");
     }
     else
     {
-        bsp_board_led_off(LEDBUTTON_LED);
+        //bsp_board_led_off(LEDBUTTON_LED);
+        nrf_gpio_pin_set(19);
         NRF_LOG_INFO("Received LED OFF!");
     }
 
@@ -429,8 +440,11 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
         case BLE_GAP_EVT_CONNECTED:
             NRF_LOG_INFO("Connected");
             flag = 0;
-            bsp_board_led_on(CONNECTED_LED);
-            bsp_board_led_off(ADVERTISING_LED);
+            //bsp_board_led_on(CONNECTED_LED);
+            nrf_gpio_pin_set(18);
+            //bsp_board_led_off(ADVERTISING_LED);
+            nrf_gpio_pin_clear(17);
+
             m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
             err_code = nrf_ble_qwr_conn_handle_assign(&m_qwr, m_conn_handle);
             APP_ERROR_CHECK(err_code);
@@ -441,7 +455,8 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
         case BLE_GAP_EVT_DISCONNECTED:
             NRF_LOG_INFO("Disconnected");
  //           flag = 1;
-            bsp_board_led_off(CONNECTED_LED);
+            //bsp_board_led_off(CONNECTED_LED);
+            nrf_gpio_pin_clear(18);
             m_conn_handle = BLE_CONN_HANDLE_INVALID;
             err_code = app_button_disable();
             APP_ERROR_CHECK(err_code);
@@ -608,10 +623,13 @@ static void idle_state_handle(void)
 int main(void)
 {
     // Initialize.
-    bsp_board_init(BSP_INIT_LEDS);
+    //bsp_board_init(BSP_INIT_LEDS);
     log_init();
+    nrf_gpio_cfg_output(19);
+    nrf_gpio_cfg_output(18);
+    nrf_gpio_cfg_output(17);
 //    saadc_init();
-    leds_init();
+    //leds_init();
     timers_init();
     buttons_init();
     power_management_init();
@@ -638,7 +656,14 @@ int main(void)
       NRF_LOG_INFO("Volts: " NRF_LOG_FLOAT_MARKER "\r\n", NRF_LOG_FLOAT(adc_val * 3.6 / 1024)); // 1024 = 10 bits resolution
       
       nrf_delay_ms(500);
+      
 */
+      //gpio_pin_write(dev, 26);
+      //gpio_pin_write(dev, 26);
+      //nrf_gpio_pin_set(19);
+      //nrf_delay_ms(1000);
+      //nrf_gpio_pin_clear(19);
+      //nrf_delay_ms(1000);
     }
 }
 
