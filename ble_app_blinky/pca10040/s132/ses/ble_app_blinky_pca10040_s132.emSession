@@ -63,7 +63,7 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="3" y="38" useTextEdit="1" path="../../../main.c" left="0" selected="1" top="16" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="24" y="362" useTextEdit="1" path="../../../main.c" left="0" selected="1" top="356" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="19" y="50" useTextEdit="1" path="../../../../../../modules/nrfx/drivers/src/nrfx_timer.c" left="0" top="33" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="22" y="5652" useTextEdit="1" openedFrom="C:/Users/admin/Desktop/research/DeviceDownload/nRF5_SDK_17.1.0_ddde560/nRF5_SDK_17.1.0_ddde560/integration/nrfx/nrfx_config.h" path="../config/sdk_config.h" left="0" top="5640" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="21" y="43" useTextEdit="1" openedFrom="C:/Users/admin/Desktop/research/DeviceDownload/nRF5_SDK_17.1.0_ddde560/nRF5_SDK_17.1.0_ddde560/modules/nrfx/drivers/src/nrfx_timer.c" path="../../../../../../modules/nrfx/nrfx.h" left="0" top="23" codecName="Default"/>

@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
 
 final flutterReactiveBle = FlutterReactiveBle();
-var MACAddress = "D0:94:42:C9:97:E5";
-var characteristic = QualifiedCharacteristic(
-    serviceId: Uuid.parse("00001523-1212-efde-1523-785feabcd123"),
-    characteristicId: Uuid.parse("00001525-1212-efde-1523-785feabcd123"),
-    deviceId: MACAddress);
+String deviceId = "D0:94:42:C9:97:E5";
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,7 +11,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,12 +36,32 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   bool lightStatus = false;
 
+  Future updateLED(bool lightStatus) async {
+    List<DiscoveredService> services =
+        await flutterReactiveBle.discoverServices(deviceId);
+    DiscoveredService LEDservice = services.elementAt(2);
+    QualifiedCharacteristic characteristic = QualifiedCharacteristic(
+        characteristicId: LEDservice.characteristicIds.elementAt(1),
+        serviceId: LEDservice.serviceId,
+        deviceId: deviceId);
+
+    // for (DiscoveredService s in services) {
+    //   print("New service");
+    //   print(s);
+    //   print("");
+    //   print(s.characteristics);
+    //   print("-------------");
+    //   print("");
+    // }
+
+    await flutterReactiveBle.writeCharacteristicWithoutResponse(characteristic,
+        value: [lightStatus ? 1 : 0]);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
       body: Center(
@@ -64,21 +80,9 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Switch(
                 value: lightStatus,
                 onChanged: (bool value) {
+                  updateLED(value);
                   setState(() {
                     lightStatus = value;
-                    int writeData;
-                    if (value) {
-                      writeData = 0x4f4e;
-                    } else {
-                      writeData = 0x4f4646;
-                    }
-                    print(value);
-                    print(writeData.toString());
-                    //print(String)
-
-                    flutterReactiveBle.writeCharacteristicWithoutResponse(
-                        characteristic,
-                        value: [writeData]);
                   });
                 },
               ),
@@ -90,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           flutterReactiveBle
               .connectToDevice(
-            id: MACAddress,
+            id: deviceId,
             servicesWithCharacteristicsToDiscover: {},
             connectionTimeout: const Duration(seconds: 2),
           )
@@ -100,18 +104,10 @@ class _MyHomePageState extends State<MyHomePage> {
           }, onError: (Object error) {
             // Handle a possible error
           });
-          // flutterReactiveBle.scanForDevices(
-          //     withServices: [], scanMode: ScanMode.lowLatency).listen((device) {
-          //   print(device);
-          //   //code for handling results
-          // }, onError: (error, stackTrace) {
-          //   //code for handling error
-          //   print(error);
-          // });
         },
         tooltip: 'Increment',
         child: const Icon(Icons.bluetooth),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
