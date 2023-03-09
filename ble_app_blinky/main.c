@@ -1,30 +1,30 @@
 /**
- * Copyright (c) 2015 - 2021, Nordic Semiconductor ASA
- *
+ * Copyright (c) 2015 - 2018, Nordic Semiconductor ASA
+ * 
  * All rights reserved.
- *
+ * 
  * Redistribution and use in source and binary forms, with or without modification,
  * are permitted provided that the following conditions are met:
- *
+ * 
  * 1. Redistributions of source code must retain the above copyright notice, this
  *    list of conditions and the following disclaimer.
- *
+ * 
  * 2. Redistributions in binary form, except as embedded into a Nordic
  *    Semiconductor ASA integrated circuit in a product or a software update for
  *    such product, must reproduce the above copyright notice, this list of
  *    conditions and the following disclaimer in the documentation and/or other
  *    materials provided with the distribution.
- *
+ * 
  * 3. Neither the name of Nordic Semiconductor ASA nor the names of its
  *    contributors may be used to endorse or promote products derived from this
  *    software without specific prior written permission.
- *
+ * 
  * 4. This software, with or without modification, must only be used with a
  *    Nordic Semiconductor ASA integrated circuit.
- *
+ * 
  * 5. Any software provided in binary form under this license must not be reverse
  *    engineered, decompiled, modified and/or disassembled.
- *
+ * 
  * THIS SOFTWARE IS PROVIDED BY NORDIC SEMICONDUCTOR ASA "AS IS" AND ANY EXPRESS
  * OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
  * OF MERCHANTABILITY, NONINFRINGEMENT, AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -35,7 +35,7 @@
  * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
+ * 
  */
 /**
  * @brief Blinky Sample Application main file.
@@ -43,16 +43,12 @@
  * This file contains the source code for a sample server application using the LED Button service.
  */
 
-#include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
+#include <stdbool.h>
 #include "nordic_common.h"
 #include "nrf.h"
-#include "nrf_drv_saadc.h"
-#include "nrf_drv_ppi.h"
-#include "nrf_drv_timer.h"
 #include "app_error.h"
-#include "nrf_delay.h"
 #include "ble.h"
 #include "ble_err.h"
 #include "ble_hci.h"
@@ -64,24 +60,22 @@
 #include "boards.h"
 #include "app_timer.h"
 #include "app_button.h"
-#include "app_util_platform.h"
 #include "ble_lbs.h"
 #include "nrf_ble_gatt.h"
 #include "nrf_ble_qwr.h"
 #include "nrf_pwr_mgmt.h"
 
+#include "nrf_gpio.h"
+#include "nrf_delay.h"
+
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
-//#include "zephyr.h"
-//#include <device.h>
-#include "nrf_gpio.h"
 
 
-#define ADVERTISING_LED                 BSP_BOARD_LED_0                         /**< Is on when device is advertising. */
-#define CONNECTED_LED                   BSP_BOARD_LED_1                         /**< Is on when device has connected. */
-#define LEDBUTTON_LED                   BSP_BOARD_LED_2                         /**< LED to be toggled with the help of the LED Button Service. */
-#define BLINKY_LED                      BSP_BOARD_LED_3    
+#define ADVERTISING_LED                 19                         /**< Is on when device is advertising. */
+#define CONNECTED_LED                   18                         /**< Is on when device has connected. */
+#define GPIO_LED                        17                         /**< LED to be toggled with the help of the LED Button Service. */
 #define LEDBUTTON_BUTTON                BSP_BUTTON_0                            /**< Button that will trigger the notification event with the LED Button Service */
 
 #define DEVICE_NAME                     "Blinky"                         /**< Name of device. Will be included in the advertising data. */
@@ -106,8 +100,6 @@
 
 #define DEAD_BEEF                       0xDEADBEEF                              /**< Value used as error code on stack dump, can be used to identify stack location on stack unwind. */
 
-bool flag = 0;
-nrf_saadc_value_t adc_val;
 
 BLE_LBS_DEF(m_lbs);                                                             /**< LED Button Service instance. */
 NRF_BLE_GATT_DEF(m_gatt);                                                       /**< GATT module instance. */
@@ -118,8 +110,6 @@ static uint16_t m_conn_handle = BLE_CONN_HANDLE_INVALID;                        
 static uint8_t m_adv_handle = BLE_GAP_ADV_SET_HANDLE_NOT_SET;                   /**< Advertising handle used to identify an advertising set. */
 static uint8_t m_enc_advdata[BLE_GAP_ADV_SET_DATA_SIZE_MAX];                    /**< Buffer for storing an encoded advertising set. */
 static uint8_t m_enc_scan_response_data[BLE_GAP_ADV_SET_DATA_SIZE_MAX];         /**< Buffer for storing an encoded scan data. */
-
-    struct device *dev;
 
 /**@brief Struct that contains pointers to the encoded advertising data. */
 static ble_gap_adv_data_t m_adv_data =
@@ -136,28 +126,6 @@ static ble_gap_adv_data_t m_adv_data =
 
     }
 };
-
-void saadc_callback_handler(nrf_drv_saadc_evt_t const * p_event) // blocking-mode
-{
-  // Empty handler function
-}
-
-/*
-void saadc_init(void)
-{
-  ret_code_t err_code; // uint32_t
-  nrf_saadc_channel_config_t channel_config = NRFX_SAADC_DEFAULT_CHANNEL_CONFIG_SE(NRF_SAADC_INPUT_AIN2); // AIN2 Pin Reading, resolution = default(10bits)
-  // Initialize the saadc
-  err_code = nrf_drv_saadc_init(NULL, saadc_callback_handler);
-  APP_ERROR_CHECK(err_code);
-  // Initialize the Channel which will be connected to that specific pin
-  err_code = nrfx_saadc_channel_init(0, &channel_config); // Pin=0
-  APP_ERROR_CHECK(err_code);
-  
-  }
-  */
-
-
 
 /**@brief Function for assert macro callback.
  *
@@ -182,7 +150,9 @@ void assert_nrf_callback(uint16_t line_num, const uint8_t * p_file_name)
  */
 static void leds_init(void)
 {
-    bsp_board_init(BSP_INIT_LEDS);
+    nrf_gpio_cfg_output(GPIO_LED);
+    nrf_gpio_cfg_output(CONNECTED_LED);
+    nrf_gpio_cfg_output(ADVERTISING_LED);
 }
 
 
@@ -297,42 +267,36 @@ static void nrf_qwr_error_handler(uint32_t nrf_error)
     APP_ERROR_HANDLER(nrf_error);
 }
 
+/*
+ void check_blinky()
+{
+    while(flag == 1)
+    {
+        nrf_gpio_pin_set(ADVERTISING_LED);
+        nrf_delay_ms(300);
+        nrf_gpio_pin_clear(ADVERTISING_LED);
+        nrf_delay_ms(300);
+    }
+}
+*/
+
 /**@brief Function for handling write events to the LED characteristic.
  *
  * @param[in] p_lbs     Instance of LED Button Service to which the write applies.
  * @param[in] led_state Written/desired state of the LED.
  */
-
- void check_blinky()
-{
-    while(flag == 1)
-    {
-        //bsp_board_led_on(ADVERTISING_LED);
-        //gpio_pin_write(dev, 19, 1);
-        nrf_gpio_pin_set(17);
-        nrf_delay_ms(300);
-        //bsp_board_led_off(ADVERTISING_LED);
-        //gpio_pin_write(dev, 19, 0);
-        nrf_gpio_pin_clear(17);
-        nrf_delay_ms(300);
-    }
-}
-
 static void led_write_handler(uint16_t conn_handle, ble_lbs_t * p_lbs, uint8_t led_state)
 {
     if (led_state)
     {
-        //bsp_board_led_on(LEDBUTTON_LED);
-        nrf_gpio_pin_clear(19);
+        nrf_gpio_pin_clear(GPIO_LED);
         NRF_LOG_INFO("Received LED ON!");
     }
     else
     {
-        //bsp_board_led_off(LEDBUTTON_LED);
-        nrf_gpio_pin_set(19);
+        nrf_gpio_pin_set(GPIO_LED);
         NRF_LOG_INFO("Received LED OFF!");
     }
-
 }
 
 
@@ -419,10 +383,11 @@ static void conn_params_init(void)
 static void advertising_start(void)
 {
     ret_code_t           err_code;
+
     err_code = sd_ble_gap_adv_start(m_adv_handle, APP_BLE_CONN_CFG_TAG);
     APP_ERROR_CHECK(err_code);
-    flag = 1;
-    check_blinky();
+
+    nrf_gpio_pin_set(ADVERTISING_LED);
 }
 
 
@@ -439,12 +404,8 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
     {
         case BLE_GAP_EVT_CONNECTED:
             NRF_LOG_INFO("Connected");
-            flag = 0;
-            //bsp_board_led_on(CONNECTED_LED);
-            nrf_gpio_pin_set(18);
-            //bsp_board_led_off(ADVERTISING_LED);
-            nrf_gpio_pin_clear(17);
-
+            nrf_gpio_pin_set(CONNECTED_LED);
+            nrf_gpio_pin_clear(ADVERTISING_LED);
             m_conn_handle = p_ble_evt->evt.gap_evt.conn_handle;
             err_code = nrf_ble_qwr_conn_handle_assign(&m_qwr, m_conn_handle);
             APP_ERROR_CHECK(err_code);
@@ -454,9 +415,7 @@ static void ble_evt_handler(ble_evt_t const * p_ble_evt, void * p_context)
 
         case BLE_GAP_EVT_DISCONNECTED:
             NRF_LOG_INFO("Disconnected");
- //           flag = 1;
-            //bsp_board_led_off(CONNECTED_LED);
-            nrf_gpio_pin_clear(18);
+            nrf_gpio_pin_clear(CONNECTED_LED);
             m_conn_handle = BLE_CONN_HANDLE_INVALID;
             err_code = app_button_disable();
             APP_ERROR_CHECK(err_code);
@@ -618,18 +577,14 @@ static void idle_state_handle(void)
     }
 }
 
+
 /**@brief Function for application main entry.
  */
 int main(void)
 {
     // Initialize.
-    //bsp_board_init(BSP_INIT_LEDS);
     log_init();
-    nrf_gpio_cfg_output(19);
-    nrf_gpio_cfg_output(18);
-    nrf_gpio_cfg_output(17);
-//    saadc_init();
-    //leds_init();
+    leds_init();
     timers_init();
     buttons_init();
     power_management_init();
@@ -648,22 +603,6 @@ int main(void)
     for (;;)
     {
         idle_state_handle();
-/* saadc basic example
-      nrfx_saadc_sample_convert(0,&adc_val); // Channel = 0
-      
-      NRF_LOG_INFO("Sample value Read: %d", adc_val);
-      led_advertising();
-      NRF_LOG_INFO("Volts: " NRF_LOG_FLOAT_MARKER "\r\n", NRF_LOG_FLOAT(adc_val * 3.6 / 1024)); // 1024 = 10 bits resolution
-      
-      nrf_delay_ms(500);
-      
-*/
-      //gpio_pin_write(dev, 26);
-      //gpio_pin_write(dev, 26);
-      //nrf_gpio_pin_set(19);
-      //nrf_delay_ms(1000);
-      //nrf_gpio_pin_clear(19);
-      //nrf_delay_ms(1000);
     }
 }
 

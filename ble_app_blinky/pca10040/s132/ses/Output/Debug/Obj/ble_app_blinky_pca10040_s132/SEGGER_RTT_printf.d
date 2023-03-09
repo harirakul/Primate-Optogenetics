@@ -1,7 +1,7 @@
 Output/Debug/Obj/ble_app_blinky_pca10040_s132/SEGGER_RTT_printf.o: \
- C:\Users\harir\OneDrive\Documents\Research\nrf5_sdk_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\external\segger_rtt\SEGGER_RTT_printf.c \
- C:\Users\harir\OneDrive\Documents\Research\nrf5_sdk_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\external\segger_rtt\SEGGER_RTT.h \
- C:\Users\harir\OneDrive\Documents\Research\nrf5_sdk_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\external\segger_rtt\SEGGER_RTT_Conf.h \
+ C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\external\segger_rtt\SEGGER_RTT_printf.c \
+ C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\external\segger_rtt\SEGGER_RTT.h \
+ C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\external\segger_rtt\SEGGER_RTT_Conf.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../components/libraries/util/app_util_platform.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/stdint.h \
@@ -13,10 +13,10 @@ Output/Debug/Obj/ble_app_blinky_pca10040_s132/SEGGER_RTT_printf.o: \
  ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
  ../../../../../../components/toolchain/cmsis/include/core_cm4.h \
- ../../../../../../components/toolchain/cmsis/include/cmsis_version.h \
- ../../../../../../components/toolchain/cmsis/include/cmsis_compiler.h \
+ ../../../../../../components/toolchain/cmsis/include/core_cmInstr.h \
  ../../../../../../components/toolchain/cmsis/include/cmsis_gcc.h \
- ../../../../../../components/toolchain/cmsis/include/mpu_armv7.h \
+ ../../../../../../components/toolchain/cmsis/include/core_cmFunc.h \
+ ../../../../../../components/toolchain/cmsis/include/core_cmSimd.h \
  ../../../../../../modules/nrfx/mdk/system_nrf52.h \
  ../../../../../../modules/nrfx/mdk/nrf52_bitfields.h \
  ../../../../../../modules/nrfx/mdk/nrf51_to_nrf52.h \

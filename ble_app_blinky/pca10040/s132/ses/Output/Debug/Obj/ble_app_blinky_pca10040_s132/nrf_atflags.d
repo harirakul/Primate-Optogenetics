@@ -1,5 +1,5 @@
 Output/Debug/Obj/ble_app_blinky_pca10040_s132/nrf_atflags.o: \
- C:\Users\harir\OneDrive\Documents\Research\nrf5_sdk_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\libraries\atomic_flags\nrf_atflags.c \
+ C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\atomic_flags\nrf_atflags.c \
  ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
  ../../../../../../components/toolchain/cmsis/include/core_cm4.h \
@@ -8,10 +8,10 @@ Output/Debug/Obj/ble_app_blinky_pca10040_s132/nrf_atflags.o: \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/__SEGGER_RTL_ConfDefaults.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/__SEGGER_RTL_Conf.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/__SEGGER_RTL_Arm_Conf.h \
- ../../../../../../components/toolchain/cmsis/include/cmsis_version.h \
- ../../../../../../components/toolchain/cmsis/include/cmsis_compiler.h \
+ ../../../../../../components/toolchain/cmsis/include/core_cmInstr.h \
  ../../../../../../components/toolchain/cmsis/include/cmsis_gcc.h \
- ../../../../../../components/toolchain/cmsis/include/mpu_armv7.h \
+ ../../../../../../components/toolchain/cmsis/include/core_cmFunc.h \
+ ../../../../../../components/toolchain/cmsis/include/core_cmSimd.h \
  ../../../../../../modules/nrfx/mdk/system_nrf52.h \
  ../../../../../../modules/nrfx/mdk/nrf52_bitfields.h \
  ../../../../../../modules/nrfx/mdk/nrf51_to_nrf52.h \
@@ -29,8 +29,6 @@ Output/Debug/Obj/ble_app_blinky_pca10040_s132/nrf_atflags.o: \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/app_util.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/stddef.h \
- ../../../../../../components/softdevice/s132/headers/nrf52/nrf_mbr.h \
- ../../../../../../components/softdevice/s132/headers/nrf_svc.h \
  ../../../../../../components/libraries/util/sdk_macros.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
- C:\Users\harir\OneDrive\Documents\Research\nrf5_sdk_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\libraries\atomic_flags\nrf_atflags.h
+ C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\atomic_flags\nrf_atflags.h

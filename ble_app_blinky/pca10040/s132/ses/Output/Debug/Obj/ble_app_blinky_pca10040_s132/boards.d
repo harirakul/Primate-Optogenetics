@@ -1,6 +1,6 @@
 Output/Debug/Obj/ble_app_blinky_pca10040_s132/boards.o: \
- C:\Users\harir\OneDrive\Documents\Research\nrf5_sdk_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\boards\boards.c \
- C:\Users\harir\OneDrive\Documents\Research\nrf5_sdk_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\boards\boards.h \
+ C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\boards\boards.c \
+ C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\boards\boards.h \
  ../../../../../../modules/nrfx/hal/nrf_gpio.h \
  ../../../../../../modules/nrfx/nrfx.h \
  ../../../../../../integration/nrfx/nrfx_config.h ../config/sdk_config.h \
@@ -15,10 +15,10 @@ Output/Debug/Obj/ble_app_blinky_pca10040_s132/boards.o: \
  ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
  ../../../../../../components/toolchain/cmsis/include/core_cm4.h \
- ../../../../../../components/toolchain/cmsis/include/cmsis_version.h \
- ../../../../../../components/toolchain/cmsis/include/cmsis_compiler.h \
+ ../../../../../../components/toolchain/cmsis/include/core_cmInstr.h \
  ../../../../../../components/toolchain/cmsis/include/cmsis_gcc.h \
- ../../../../../../components/toolchain/cmsis/include/mpu_armv7.h \
+ ../../../../../../components/toolchain/cmsis/include/core_cmFunc.h \
+ ../../../../../../components/toolchain/cmsis/include/core_cmSimd.h \
  ../../../../../../modules/nrfx/mdk/system_nrf52.h \
  ../../../../../../modules/nrfx/mdk/nrf52_bitfields.h \
  ../../../../../../modules/nrfx/mdk/nrf51_to_nrf52.h \
@@ -34,8 +34,6 @@ Output/Debug/Obj/ble_app_blinky_pca10040_s132/boards.o: \
  ../../../../../../components/libraries/util/app_util.h \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
  ../../../../../../components/libraries/util/nordic_common.h \
- ../../../../../../components/softdevice/s132/headers/nrf52/nrf_mbr.h \
- ../../../../../../components/softdevice/s132/headers/nrf_svc.h \
  ../../../../../../components/libraries/util/nordic_common.h \
  ../../../../../../components/libraries/util/app_util_platform.h \
  ../../../../../../components/softdevice/s132/headers/nrf_soc.h \
@@ -50,10 +48,8 @@ Output/Debug/Obj/ble_app_blinky_pca10040_s132/boards.o: \
  ../../../../../../components/softdevice/s132/headers/nrf_error.h \
  ../../../../../../components/libraries/util/app_error_weak.h \
  ../../../../../../modules/nrfx/soc/nrfx_coredep.h \
- ../../../../../../modules/nrfx/soc/nrfx_atomic.h \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/libraries/util/sdk_resources.h \
  ../../../../../../components/softdevice/s132/headers/nrf_sd_def.h \
- ../../../../../../components/softdevice/s132/headers/nrf_soc.h \
  ../../../../../../modules/nrfx/drivers/nrfx_errors.h \
- C:\Users\harir\OneDrive\Documents\Research\nrf5_sdk_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\components\boards\pca10040.h
+ C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\boards\pca10040.h
