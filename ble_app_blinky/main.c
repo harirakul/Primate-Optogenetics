@@ -289,12 +289,12 @@ static void led_write_handler(uint16_t conn_handle, ble_lbs_t * p_lbs, uint8_t l
 {
     if (led_state)
     {
-        nrf_gpio_pin_clear(GPIO_LED);
+        nrf_gpio_pin_set(GPIO_LED);
         NRF_LOG_INFO("Received LED ON!");
     }
     else
     {
-        nrf_gpio_pin_set(GPIO_LED);
+        nrf_gpio_pin_clear(GPIO_LED);
         NRF_LOG_INFO("Received LED OFF!");
     }
 }

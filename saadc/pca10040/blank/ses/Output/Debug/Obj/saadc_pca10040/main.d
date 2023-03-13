@@ -1,5 +1,5 @@
 Output/Debug/Obj/saadc_pca10040/main.o: \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5_SDK_17.1.0_ddde560\nRF5_SDK_17.1.0_ddde560\examples\MyProjects\saadc\main.c \
+ C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\examples\MyProjects\saadc\main.c \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/stdbool.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/stdint.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/__SEGGER_RTL.h \
@@ -11,10 +11,10 @@ Output/Debug/Obj/saadc_pca10040/main.o: \
  ../../../../../../modules/nrfx/mdk/nrf.h \
  ../../../../../../modules/nrfx/mdk/nrf52.h \
  ../../../../../../components/toolchain/cmsis/include/core_cm4.h \
- ../../../../../../components/toolchain/cmsis/include/cmsis_version.h \
- ../../../../../../components/toolchain/cmsis/include/cmsis_compiler.h \
+ ../../../../../../components/toolchain/cmsis/include/core_cmInstr.h \
  ../../../../../../components/toolchain/cmsis/include/cmsis_gcc.h \
- ../../../../../../components/toolchain/cmsis/include/mpu_armv7.h \
+ ../../../../../../components/toolchain/cmsis/include/core_cmFunc.h \
+ ../../../../../../components/toolchain/cmsis/include/core_cmSimd.h \
  ../../../../../../modules/nrfx/mdk/system_nrf52.h \
  ../../../../../../modules/nrfx/mdk/nrf52_bitfields.h \
  ../../../../../../modules/nrfx/mdk/nrf51_to_nrf52.h \
@@ -44,7 +44,6 @@ Output/Debug/Obj/saadc_pca10040/main.o: \
  ../../../../../../components/drivers_nrf/nrf_soc_nosd/nrf_error.h \
  ../../../../../../components/libraries/util/app_error_weak.h \
  ../../../../../../modules/nrfx/soc/nrfx_coredep.h \
- ../../../../../../modules/nrfx/soc/nrfx_atomic.h \
  ../../../../../../components/libraries/util/sdk_errors.h \
  ../../../../../../components/libraries/util/sdk_resources.h \
  ../../../../../../modules/nrfx/drivers/nrfx_errors.h \
@@ -63,21 +62,21 @@ Output/Debug/Obj/saadc_pca10040/main.o: \
  ../../../../../../components/libraries/pwr_mgmt/nrf_pwr_mgmt.h \
  ../../../../../../components/libraries/experimental_section_vars/nrf_section_iter.h \
  ../../../../../../components/libraries/experimental_section_vars/nrf_section.h \
- ../../../../../../components/libraries/log/nrf_log.h \
+ ../../../../../../components/libraries/experimental_log/nrf_log.h \
  ../../../../../../components/libraries/util/sdk_common.h \
  ../../../../../../components/libraries/util/sdk_os.h \
  ../../../../../../components/libraries/util/app_util.h \
  ../../../../../../components/libraries/util/sdk_macros.h \
  ../../../../../../components/libraries/experimental_section_vars/nrf_section.h \
  ../../../../../../components/libraries/strerror/nrf_strerror.h \
- ../../../../../../components/libraries/log/src/nrf_log_internal.h \
- ../../../../../../components/libraries/log/nrf_log_instance.h \
- ../../../../../../components/libraries/log/nrf_log_types.h \
- ../../../../../../components/libraries/log/nrf_log_types.h \
- ../../../../../../components/libraries/log/nrf_log_ctrl.h \
- ../../../../../../components/libraries/log/src/nrf_log_ctrl_internal.h \
- ../../../../../../components/libraries/log/nrf_log_backend_interface.h \
- ../../../../../../components/libraries/memobj/nrf_memobj.h \
+ ../../../../../../components/libraries/experimental_log/src/nrf_log_internal.h \
+ ../../../../../../components/libraries/experimental_log/nrf_log_instance.h \
+ ../../../../../../components/libraries/experimental_log/nrf_log_types.h \
+ ../../../../../../components/libraries/experimental_log/nrf_log_types.h \
+ ../../../../../../components/libraries/experimental_log/nrf_log_ctrl.h \
+ ../../../../../../components/libraries/experimental_log/src/nrf_log_ctrl_internal.h \
+ ../../../../../../components/libraries/experimental_log/nrf_log_backend_interface.h \
+ ../../../../../../components/libraries/experimental_memobj/nrf_memobj.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/stdlib.h \
  ../../../../../../components/libraries/balloc/nrf_balloc.h \
- ../../../../../../components/libraries/log/nrf_log_default_backends.h
+ ../../../../../../components/libraries/experimental_log/nrf_log_default_backends.h

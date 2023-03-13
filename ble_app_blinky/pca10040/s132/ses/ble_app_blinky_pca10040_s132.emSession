@@ -39,8 +39,8 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="2" y="280" useTextEdit="1" path="../../../main.c" left="0" selected="1" top="260" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="75" useTextEdit="1" path="../../../../../../external/segger_rtt/SEGGER_RTT_Syscalls_SES.c" left="0" top="50" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="2" y="394" useTextEdit="1" path="../../../main.c" left="0" selected="1" top="65" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="75" useTextEdit="1" path="../../../../../../external/segger_rtt/SEGGER_RTT_Syscalls_SES.c" left="0" top="60" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="ble_app_blinky_pca10040_s132" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>
