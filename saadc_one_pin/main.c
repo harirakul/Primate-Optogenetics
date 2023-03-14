@@ -52,9 +52,9 @@ void saadc_init(void)
   // we have used VDD internal voltage as first parameter for input you can use any pin as well
 // second paramter is the second pin to be used
   
-// nrf_saadc_channel_config_t channel_config = NRFX_SAADC_DEFAULT_CHANNEL_CONFIG_SE(NRF_SAADC_INPUT_AIN2); //single-ended
+ nrf_saadc_channel_config_t channel_config = NRFX_SAADC_DEFAULT_CHANNEL_CONFIG_SE(NRF_SAADC_INPUT_AIN0); //single-ended
 //  nrf_saadc_channel_config_t channel_config = NRFX_SAADC_DEFAULT_CHANNEL_CONFIG_DIFFERENTIAL(NRF_SAADC_INPUT_VDD, NRF_SAADC_INPUT_AIN0); // difference btw VDD and AIN0
-nrf_saadc_channel_config_t channel_config = NRFX_SAADC_DEFAULT_CHANNEL_CONFIG_DIFFERENTIAL(NRF_SAADC_INPUT_AIN0, NRF_SAADC_INPUT_AIN2); // difference btw AIN0 and AIN2
+//nrf_saadc_channel_config_t channel_config = NRFX_SAADC_DEFAULT_CHANNEL_CONFIG_DIFFERENTIAL(NRF_SAADC_INPUT_AIN0, NRF_SAADC_INPUT_AIN2); // difference btw AIN0 and AIN2
   
   // Initialize the saadc 
   // first parameter is for configuring the adc resolution and other features, we will see in future tutorial
@@ -120,8 +120,8 @@ int main(void)
 		// use nrf log and float marker to show the floating point values on the log
 		// In diferential mode, to calculate the voltage by this: input_sample / 2 * 3.6 / 2^n (where n = 8 or 10 or 12 or 14 depending on our configuration for resolution in bits)
 		// 
-      NRF_LOG_INFO("Volts: " NRF_LOG_FLOAT_MARKER "\r\n", NRF_LOG_FLOAT(adc_val / 2 * 3.6 / 512)); // differential mode
-//      NRF_LOG_INFO("Volts: " NRF_LOG_FLOAT_MARKER "\r\n", NRF_LOG_FLOAT(adc_val * 3.6 / 512));
+//      NRF_LOG_INFO("Volts: " NRF_LOG_FLOAT_MARKER "\r\n", NRF_LOG_FLOAT(adc_val / 2 * 3.6 / 512)); // differential mode
+      NRF_LOG_INFO("Volts: " NRF_LOG_FLOAT_MARKER "\r\n", NRF_LOG_FLOAT(adc_val * 3.6 / 512));
        
 	   // give 500ms delay 
        nrf_delay_ms(500);
