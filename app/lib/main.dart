@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
 
 final flutterReactiveBle = FlutterReactiveBle();
-String deviceId = "D0:94:42:C9:97:E5";
+//String deviceId = "D0:94:42:C9:97:E5";
+String deviceId = "C7:23:46:15:6A:50";
+List foundDevices = [];
 
 void main() {
   runApp(const MyApp());
@@ -69,23 +71,49 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const SizedBox(
-              height: 50,
-              child: Text(
-                'LED Status',
-                style: TextStyle(fontSize: 24),
-              ),
-            ),
-            Transform.scale(
-              scale: 2,
-              child: Switch(
-                value: lightStatus,
-                onChanged: (bool value) {
-                  updateLED(value);
-                  setState(() {
-                    lightStatus = value;
+            ElevatedButton(
+                onPressed: () {
+                  flutterReactiveBle.scanForDevices(
+                      withServices: [],
+                      scanMode: ScanMode.lowLatency).listen((device) {
+                    setState(() {
+                      foundDevices.add(device);
+                    });
+                    //code for handling results
+                  }, onError: (Object error) {
+                    print(error);
+                    //code for handling error
                   });
                 },
+                child: Text("SCAN")),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: foundDevices.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          children: [
+                            Text("${foundDevices[index]}"),
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
+            ),
+            Expanded(
+              child: Transform.scale(
+                scale: 2,
+                child: Switch(
+                  value: lightStatus,
+                  onChanged: (bool value) {
+                    updateLED(value);
+                    setState(() {
+                      lightStatus = value;
+                    });
+                  },
+                ),
               ),
             ),
           ],
@@ -97,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
               .connectToDevice(
             id: deviceId,
             servicesWithCharacteristicsToDiscover: {},
-            connectionTimeout: const Duration(seconds: 2),
+            connectionTimeout: const Duration(seconds: 5),
           )
               .listen((connectionState) {
             // Handle connection state updates
