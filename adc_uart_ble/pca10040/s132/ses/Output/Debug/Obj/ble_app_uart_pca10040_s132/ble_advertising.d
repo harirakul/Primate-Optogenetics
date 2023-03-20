@@ -1,5 +1,5 @@
 Output/Debug/Obj/ble_app_uart_pca10040_s132/ble_advertising.o: \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\ble\ble_advertising\ble_advertising.c \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5sdk1500a53641a\nRF5_SDK_15.0.0_a53641a\components\ble\ble_advertising\ble_advertising.c \
  ../../../../../../components/libraries/util/sdk_common.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/stdint.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/__SEGGER_RTL.h \
@@ -43,7 +43,7 @@ Output/Debug/Obj/ble_app_uart_pca10040_s132/ble_advertising.o: \
  ../../../../../../components/softdevice/s132/headers/ble_gatt.h \
  ../../../../../../components/softdevice/s132/headers/ble_gattc.h \
  ../../../../../../components/softdevice/s132/headers/ble_gatts.h \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\ble\ble_advertising\ble_advertising.h \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5sdk1500a53641a\nRF5_SDK_15.0.0_a53641a\components\ble\ble_advertising\ble_advertising.h \
  ../../../../../../components/softdevice/s132/headers/ble_gattc.h \
  ../../../../../../components/softdevice/s132/headers/nrf_soc.h \
  ../../../../../../components/softdevice/s132/headers/nrf_error_soc.h \

@@ -1,6 +1,6 @@
 Output/Debug/Obj/ble_app_uart_pca10040_s132/bsp.o: \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\bsp\bsp.c \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\bsp\bsp.h \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5sdk1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\bsp\bsp.c \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5sdk1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\bsp\bsp.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/stdint.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/__SEGGER_RTL.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/__SEGGER_RTL_ConfDefaults.h \
@@ -56,5 +56,5 @@ Output/Debug/Obj/ble_app_uart_pca10040_s132/bsp.o: \
  ../../../../../../components/boards/pca10040.h \
  ../../../../../../components/libraries/button/app_button.h \
  ../../../../../../components/libraries/util/app_error.h \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\bsp\bsp_config.h \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5sdk1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\bsp\bsp_config.h \
  ../../../../../../components/libraries/timer/app_timer.h

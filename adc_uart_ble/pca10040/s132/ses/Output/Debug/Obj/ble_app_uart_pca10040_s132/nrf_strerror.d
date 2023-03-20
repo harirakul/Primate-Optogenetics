@@ -1,5 +1,5 @@
 Output/Debug/Obj/ble_app_uart_pca10040_s132/nrf_strerror.o: \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\strerror\nrf_strerror.c \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5sdk1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\strerror\nrf_strerror.c \
  ../../../../../../components/libraries/util/sdk_common.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/stdint.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/__SEGGER_RTL.h \
@@ -30,5 +30,5 @@ Output/Debug/Obj/ble_app_uart_pca10040_s132/nrf_strerror.o: \
  ../../../../../../modules/nrfx/mdk/compiler_abstraction.h \
  ../../../../../../components/libraries/util/sdk_macros.h \
  ../../../../../../components/libraries/util/nrf_assert.h \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\strerror\nrf_strerror.h \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5sdk1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\strerror\nrf_strerror.h \
  ../../../../../../components/libraries/util/sdk_errors.h

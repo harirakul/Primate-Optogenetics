@@ -1,7 +1,7 @@
 Output/Debug/Obj/ble_app_uart_pca10040_s132/nrf_fstorage.o: \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\fstorage\nrf_fstorage.c \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5sdk1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\fstorage\nrf_fstorage.c \
  ../config/sdk_config.h \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\fstorage\nrf_fstorage.h \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5sdk1500a53641a\nRF5_SDK_15.0.0_a53641a\components\libraries\fstorage\nrf_fstorage.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/stdint.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/__SEGGER_RTL.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/__SEGGER_RTL_ConfDefaults.h \

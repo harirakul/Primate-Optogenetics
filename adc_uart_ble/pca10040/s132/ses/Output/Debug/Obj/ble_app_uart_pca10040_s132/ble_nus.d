@@ -1,5 +1,5 @@
 Output/Debug/Obj/ble_app_uart_pca10040_s132/ble_nus.o: \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\ble\ble_services\ble_nus\ble_nus.c \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5sdk1500a53641a\nRF5_SDK_15.0.0_a53641a\components\ble\ble_services\ble_nus\ble_nus.c \
  ../../../../../../components/libraries/util/sdk_common.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/stdint.h \
  C:/Program\ Files/SEGGER/SEGGER\ Embedded\ Studio\ for\ ARM\ 7.10a/include/__SEGGER_RTL.h \
@@ -42,7 +42,7 @@ Output/Debug/Obj/ble_app_uart_pca10040_s132/ble_nus.o: \
  ../../../../../../components/softdevice/s132/headers/ble_gatt.h \
  ../../../../../../components/softdevice/s132/headers/ble_gattc.h \
  ../../../../../../components/softdevice/s132/headers/ble_gatts.h \
- C:\Users\admin\Desktop\research\DeviceDownload\nRF5SDK1500a53641a\nRF5_SDK_15.0.0_a53641a\components\ble\ble_services\ble_nus\ble_nus.h \
+ C:\Users\harir\OneDrive\Documents\Research\nrf5sdk1500a53641a\nRF5_SDK_15.0.0_a53641a\components\ble\ble_services\ble_nus\ble_nus.h \
  ../../../../../../components/ble/common/ble_srv_common.h \
  ../../../../../../components/softdevice/s132/headers/ble_types.h \
  ../../../../../../components/libraries/util/app_util.h \

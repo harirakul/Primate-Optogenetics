@@ -46,10 +46,10 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="20" y="9" useTextEdit="1" path="../../../main.c" left="0" selected="1" top="0" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="77" y="712" useTextEdit="1" path="../../../main.c" left="0" selected="1" top="701" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="4" y="184" useTextEdit="1" path="../../../../../../components/libraries/experimental_log/src/nrf_log_internal.h" left="0" top="179" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="109" useTextEdit="1" path="../../../../../../components/libraries/experimental_log/src/nrf_log_backend_uart.c" left="0" top="90" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="403" useTextEdit="1" openedFrom="C:/Users/admin/Desktop/research/DeviceDownload/nRF5SDK1500a53641a/nRF5_SDK_15.0.0_a53641a/examples/MyProjects/ble_uart/main.c" path="../../../../../../components/ble/ble_services/ble_nus/ble_nus.c" left="0" top="391" codecName="Default"/>
  </Files>
- <EMStudioWindow activeProject="ble_app_uart_pca10040_s132" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/admin/Desktop/research/DeviceDownload/nRF5SDK1500a53641a/nRF5_SDK_15.0.0_a53641a/external/segger_rtt" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <EMStudioWindow activeProject="ble_app_uart_pca10040_s132" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/admin/Desktop/research/DeviceDownload/nRF5SDK1500a53641a/nRF5_SDK_15.0.0_a53641a/external/segger_rtt" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>

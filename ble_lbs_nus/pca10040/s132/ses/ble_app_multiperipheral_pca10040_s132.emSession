@@ -62,17 +62,9 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="28" y="496" useTextEdit="1" path="../../../main.c" left="0" selected="1" top="977" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="29" y="193" useTextEdit="1" path="../../../main.c" left="0" selected="1" top="187" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="11453" useTextEdit="1" path="../config/sdk_config.h" left="0" top="11453" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="88" useTextEdit="1" path="ble_app_multiperipheral_pca10040_s132.emProject" left="0" top="88" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="73" useTextEdit="1" path="../../../../../../../modules/nrfx/drivers/include/nrfx_timer.h" left="0" top="62" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="69" useTextEdit="1" path="../../../../../../../modules/nrfx/drivers/src/nrfx_timer.c" left="0" top="58" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="41" useTextEdit="1" path="../../../../../../../modules/nrfx/drivers/src/nrfx_saadc.c" left="0" top="33" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="125" useTextEdit="1" path="../../../../../../../integration/nrfx/legacy/nrf_drv_saadc.h" left="0" top="115" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="42" useTextEdit="1" path="../../../../../../../modules/nrfx/drivers/src/nrfx_ppi.c" left="0" top="32" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="98" useTextEdit="1" path="../../../../../../../components/libraries/util/app_error_weak.c" left="0" top="88" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" path="../../../../../../../components/libraries/timer/app_timer.c" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="399" useTextEdit="1" path="../../../../../../../components/ble/ble_services/ble_nus/ble_nus.c" left="0" top="395" codecName="Default"/>
  </Files>
  <EMStudioWindow activeProject="ble_app_multiperipheral_pca10040_s132" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
